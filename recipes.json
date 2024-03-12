@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "id": 654959,
+      "title": "Pasta With Tuna",
+      "image": "https://spoonacular.com/recipeImages/654959-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 643642,
+      "title": "Macaroni Pasta with Fresh Tomatoes, Zucchini and Artichokes",
+      "image": "https://spoonacular.com/recipeImages/643642-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 648279,
+      "title": "Italian Tuna Pasta",
+      "image": "https://spoonacular.com/recipeImages/648279-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 32579,
+      "title": "Tuna Spaghetti With Fava Beans",
+      "image": "https://spoonacular.com/recipeImages/32579-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 1095769,
+      "title": "Mediterranean-inspired Tuna Almond Whole-wheat Spaghetti",
+      "image": "https://spoonacular.com/recipeImages/1095769-312x231.jpg",
+      "imageType": "jpg"
+    }
+  ],
+  "offset": 0,
+  "number": 5,
+  "totalResults": 5
+}
