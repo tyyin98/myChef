@@ -54,34 +54,30 @@ function Ingredients({
   }
 
   return (
-    <div className="grid-cols-3">
-      <span className="sm:block md:inline">
-        <input
-          className="w-1/3 bg-yellow-100 p-1"
-          placeholder="ingredient1"
-          value={ingred1}
-          onChange={(e) => handleChangeIngred1(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-      </span>
-      <span className="sm:block md:inline">
-        <input
-          className="w-1/3 bg-yellow-100 p-1"
-          placeholder="ingredient2"
-          value={ingred2}
-          onChange={(e) => handleChangeIngred2(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-      </span>
-      <span className="sm:block md:inline">
-        <input
-          className="w-1/3 bg-yellow-100 p-1"
-          placeholder="ingredient3"
-          value={ingred3}
-          onChange={(e) => handleChangeIngred3(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-      </span>
+    <div className="flex items-center justify-around py-1">
+      <input
+        className="w-3/12 rounded-lg bg-yellow-100 p-1"
+        placeholder="ingredient1"
+        value={ingred1}
+        onChange={(e) => handleChangeIngred1(e.target.value)}
+        onKeyDown={handleKeyDown}
+      />
+
+      <input
+        className=" w-3/12 rounded-lg bg-yellow-100 p-1"
+        placeholder="ingredient2"
+        value={ingred2}
+        onChange={(e) => handleChangeIngred2(e.target.value)}
+        onKeyDown={handleKeyDown}
+      />
+
+      <input
+        className="w-3/12 rounded-lg bg-yellow-100 p-1"
+        placeholder="ingredient3"
+        value={ingred3}
+        onChange={(e) => handleChangeIngred3(e.target.value)}
+        onKeyDown={handleKeyDown}
+      />
     </div>
   );
 }

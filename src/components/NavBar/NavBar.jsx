@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 
 function NavBar({ children }) {
-  return <div className="grid-rows-2 bg-yellow-500  p-4 ">{children}</div>;
+  return (
+    <div className="h-[calc(100vh/7)] grid-rows-2  bg-yellow-500 p-4">
+      {children}
+    </div>
+  );
 }
 
 export default NavBar;

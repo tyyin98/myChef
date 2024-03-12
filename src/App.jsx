@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar/NavBar";
 import SearchRecipe from "./components/NavBar/SearchRecipe";
 import RecipeList from "./components/Recipe/RecipeList";
 import RecipeDetail from "./components/Recipe/RecipeDetail";
+import BottomNav from "./components/BottomNav/BottomNav";
+import Favorites from "./components/Favorites/Favorites";
 // import RecipeItem from "./components/Recipe/RecipeItem";
 
 function App() {
@@ -16,12 +18,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
   const [currRecipeId, setCurrRecipeId] = useState();
+  const [isOnSearchPage, setIsOnSearchPage] = useState(true);
 
   return (
     <>
-      <div className="">
-        <NavBar>
-          <Logo />
+      <NavBar>
+        <Logo />
+        {isOnSearchPage ? (
           <SearchRecipe
             query={query}
             setQuery={setQuery}
@@ -37,27 +40,35 @@ function App() {
             setIsLoading={setIsLoading}
             setCurrRecipeId={setCurrRecipeId}
           />
-        </NavBar>
-        {isDetailOpen && (
-          <RecipeDetail
-            isDetailOpen={isDetailOpen}
+        ) : (
+          "placeholder for fav page"
+        )}
+      </NavBar>
+      {isDetailOpen && (
+        <RecipeDetail
+          isDetailOpen={isDetailOpen}
+          setIsDetailOpen={setIsDetailOpen}
+          currRecipeId={currRecipeId}
+          setCurrRecipeId={setCurrRecipeId}
+        />
+      )}
+      <div className="mx-auto w-11/12 overflow-scroll bg-transparent">
+        {isLoading ? (
+          "Loading..."
+        ) : isOnSearchPage ? (
+          <RecipeList
+            searchResults={searchResults}
             setIsDetailOpen={setIsDetailOpen}
-            currRecipeId={currRecipeId}
             setCurrRecipeId={setCurrRecipeId}
           />
+        ) : (
+          <Favorites />
         )}
-        <div className="mx-auto w-11/12 overflow-scroll bg-transparent">
-          {isLoading ? (
-            "Loading..."
-          ) : (
-            <RecipeList
-              searchResults={searchResults}
-              setIsDetailOpen={setIsDetailOpen}
-              setCurrRecipeId={setCurrRecipeId}
-            />
-          )}
-        </div>
       </div>
+      <BottomNav
+        isOnSearchPage={isOnSearchPage}
+        setIsOnSearchPage={setIsOnSearchPage}
+      />
     </>
   );
 }
