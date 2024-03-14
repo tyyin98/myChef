@@ -1,4 +1,8 @@
-function BottomNav({ isOnSearchPage, setIsOnSearchPage }) {
+import { useHomePage } from "../../contexts/HomePageContexts";
+
+function BottomNav() {
+  const { isOnSearchPage, setIsOnSearchPage } = useHomePage();
+
   function handleSearchButton() {
     if (!isOnSearchPage) {
       setIsOnSearchPage(true);

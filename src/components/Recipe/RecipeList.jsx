@@ -1,7 +1,7 @@
 import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
 import RecipeItem from "./RecipeItem";
 
-function RecipeList({ setIsDetailOpen }) {
+function RecipeList() {
   const { searchResults } = useSearchRecipe();
 
   return searchResults.length > 0 ? (
@@ -12,7 +12,6 @@ function RecipeList({ setIsDetailOpen }) {
           title={item.title}
           id={item.id}
           imageSrc={item.image}
-          setIsDetailOpen={setIsDetailOpen}
         />
       ))}
     </ul>

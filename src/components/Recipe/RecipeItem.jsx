@@ -1,6 +1,8 @@
+import { useHomePage } from "../../contexts/HomePageContexts";
 import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
 
-function RecipeItem({ title, imageSrc, id, setIsDetailOpen }) {
+function RecipeItem({ title, imageSrc, id }) {
+  const { setIsDetailOpen } = useHomePage();
   const { setCurrRecipeId } = useSearchRecipe();
   function handleClickItem() {
     setCurrRecipeId(id);

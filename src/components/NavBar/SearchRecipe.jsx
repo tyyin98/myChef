@@ -1,11 +1,13 @@
 import Ingredients from "./Ingredients";
 import SearchButton from "./SearchButton";
 import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
+import { useHomePage } from "../../contexts/HomePageContexts";
 
 // b5dd3b928c05439bb5a74517645529a4
 // b5dd3b928c05439bb5a74517645529a4
 
-function SearchRecipe({ setIsLoading }) {
+function SearchRecipe() {
+  const { setIsLoading } = useHomePage();
   const {
     query,
     setSearchResults,
