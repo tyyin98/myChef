@@ -30,7 +30,6 @@ function Ingredients({
         placeholder="ingredient1"
         value={ingred1}
         onChange={(e) => handleChangeIngred1(e.target.value)}
-        // onKeyDown={handleKeyDown}
       />
 
       <input
@@ -38,7 +37,6 @@ function Ingredients({
         placeholder="ingredient2"
         value={ingred2}
         onChange={(e) => handleChangeIngred2(e.target.value)}
-        // onKeyDown={handleKeyDown}
       />
 
       <input
@@ -46,7 +44,6 @@ function Ingredients({
         placeholder="ingredient3"
         value={ingred3}
         onChange={(e) => handleChangeIngred3(e.target.value)}
-        // onKeyDown={handleKeyDown}
       />
     </div>
   );
