@@ -57,7 +57,10 @@ function SearchRecipe({
   }
 
   return (
-    <div className="flex-col items-center justify-center ">
+    <div
+      className="flex-col items-center justify-center "
+      onKeyDown={handleKeyDown}
+    >
       <div className="flex items-center justify-around ">
         <input
           className="my-1 h-8 w-64  rounded-lg p-2 placeholder:text-center"
@@ -65,7 +68,6 @@ function SearchRecipe({
           placeholder="🔍 Search recipes..."
           value={query}
           onChange={(e) => handleQueryChange(e.target.value)}
-          onKeyDown={handleKeyDown}
         />
         <button onClick={() => toggleAdding()}> ➕ 🥕 🥩 ...</button>
       </div>
