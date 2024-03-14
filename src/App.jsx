@@ -7,7 +7,7 @@ import RecipeDetail from "./components/Recipe/RecipeDetail";
 import BottomNav from "./components/BottomNav/BottomNav";
 import Favorites from "./components/Favorites/Favorites";
 import { SearchRecipeProvider } from "./contexts/SearchRecipeContexts";
-import { useHomePage } from "./contexts/HomePageContexts";
+import { useHomePage } from "./hooks/useHomePage";
 
 function App() {
   const { isOnSearchPage, isDetailOpen, isLoading } = useHomePage();

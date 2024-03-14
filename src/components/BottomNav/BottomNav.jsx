@@ -1,4 +1,4 @@
-import { useHomePage } from "../../contexts/HomePageContexts";
+import { useHomePage } from "../../hooks/useHomePage";
 
 function BottomNav() {
   const { isOnSearchPage, setIsOnSearchPage } = useHomePage();

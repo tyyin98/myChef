@@ -1,5 +1,5 @@
-import { useHomePage } from "../../contexts/HomePageContexts";
 import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
+import { useHomePage } from "../../hooks/useHomePage";
 
 function RecipeItem({ title, imageSrc, id }) {
   const { setIsDetailOpen } = useHomePage();
