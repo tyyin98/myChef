@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
 // b5dd3b928c05439bb5a74517645529a4
 // 7844e6f4170c48e8a6635f9ab3d2dab8
 
-function RecipeDetail({ setIsDetailOpen, currRecipeId }) {
+function RecipeDetail({ setIsDetailOpen }) {
   const [recipeDetail, setRecipeDetail] = useState();
   const [isLoading, setIsloading] = useState(true);
+
+  const { currRecipeId } = useSearchRecipe();
 
   useEffect(
     function () {

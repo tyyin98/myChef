@@ -1,24 +1,20 @@
 import { useState } from "react";
+
 import Ingredients from "./Ingredients";
 import SearchButton from "./SearchButton";
+import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
 
 // b5dd3b928c05439bb5a74517645529a4
 // b5dd3b928c05439bb5a74517645529a4
 
-function SearchRecipe({
-  query,
-  setQuery,
-  ingred1,
-  setIngred1,
-  ingred2,
-  setIngred2,
-  ingred3,
-  setIngred3,
-  searchResults,
-  setSearchResults,
-  setIsLoading,
-}) {
+function SearchRecipe({ setIsLoading }) {
+  const [query, setQuery] = useState("");
+  const [ingred1, setIngred1] = useState("");
+  const [ingred2, setIngred2] = useState("");
+  const [ingred3, setIngred3] = useState("");
   const [isAdding, setIsAdding] = useState(false);
+
+  const { searchResults, setSearchResults } = useSearchRecipe();
 
   function toggleAdding() {
     setIsAdding(!isAdding);

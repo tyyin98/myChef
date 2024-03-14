@@ -1,4 +1,7 @@
-function RecipeItem({ title, imageSrc, id, setIsDetailOpen, setCurrRecipeId }) {
+import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
+
+function RecipeItem({ title, imageSrc, id, setIsDetailOpen }) {
+  const { setCurrRecipeId } = useSearchRecipe();
   function handleClickItem() {
     setCurrRecipeId(id);
     setIsDetailOpen(true);
