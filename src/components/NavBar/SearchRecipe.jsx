@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Ingredients from "./Ingredients";
 import SearchButton from "./SearchButton";
 import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
@@ -8,13 +6,19 @@ import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
 // b5dd3b928c05439bb5a74517645529a4
 
 function SearchRecipe({ setIsLoading }) {
-  const [query, setQuery] = useState("");
-  const [ingred1, setIngred1] = useState("");
-  const [ingred2, setIngred2] = useState("");
-  const [ingred3, setIngred3] = useState("");
-  const [isAdding, setIsAdding] = useState(false);
-
-  const { searchResults, setSearchResults } = useSearchRecipe();
+  const {
+    query,
+    setSearchResults,
+    ingred1,
+    setIngred1,
+    ingred2,
+    setIngred2,
+    ingred3,
+    setIngred3,
+    setIsAdding,
+    setQuery,
+    isAdding,
+  } = useSearchRecipe();
 
   function toggleAdding() {
     setIsAdding(!isAdding);
@@ -69,19 +73,7 @@ function SearchRecipe({ setIsLoading }) {
       </div>
       {isAdding && (
         <div>
-          <Ingredients
-            query={query}
-            setQuery={setQuery}
-            ingred1={ingred1}
-            setIngred1={setIngred1}
-            ingred2={ingred2}
-            setIngred2={setIngred2}
-            ingred3={ingred3}
-            setIngred3={setIngred3}
-            searchResults={searchResults}
-            setSearchResults={setSearchResults}
-            setIsLoading={setIsLoading}
-          />
+          <Ingredients />
         </div>
       )}
       <div className="flex items-center justify-center">

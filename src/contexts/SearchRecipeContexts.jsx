@@ -5,6 +5,11 @@ const SearchRecipeContext = createContext();
 function SearchRecipeProvider({ children }) {
   const [searchResults, setSearchResults] = useState([]);
   const [currRecipeId, setCurrRecipeId] = useState();
+  const [query, setQuery] = useState("");
+  const [ingred1, setIngred1] = useState("");
+  const [ingred2, setIngred2] = useState("");
+  const [ingred3, setIngred3] = useState("");
+  const [isAdding, setIsAdding] = useState(false);
 
   return (
     <SearchRecipeContext.Provider
@@ -13,6 +18,16 @@ function SearchRecipeProvider({ children }) {
         setSearchResults,
         currRecipeId,
         setCurrRecipeId,
+        query,
+        setQuery,
+        ingred1,
+        setIngred1,
+        ingred2,
+        setIngred2,
+        ingred3,
+        setIngred3,
+        isAdding,
+        setIsAdding,
       }}
     >
       {children}

@@ -1,16 +1,10 @@
 import PropTypes from "prop-types";
-function Ingredients({
-  query,
-  setQuery,
-  ingred1,
-  setIngred1,
-  ingred2,
-  setIngred2,
-  ingred3,
-  setIngred3,
-  setSearchResults,
-  setIsLoading,
-}) {
+import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
+
+function Ingredients() {
+  const { ingred1, ingred2, ingred3, setIngred1, setIngred2, setIngred3 } =
+    useSearchRecipe();
+
   function handleChangeIngred1(ingred) {
     setIngred1(ingred);
   }
