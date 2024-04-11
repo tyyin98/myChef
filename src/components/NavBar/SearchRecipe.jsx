@@ -3,8 +3,8 @@ import SearchButton from "./SearchButton";
 import { useSearchRecipe } from "../../contexts/SearchRecipeContexts";
 import { useHomePage } from "../../hooks/useHomePage";
 
-// b5dd3b928c05439bb5a74517645529a4
-// b5dd3b928c05439bb5a74517645529a4
+// const apikey1 = "b5dd3b928c05439bb5a74517645529a4";
+const apikey2 = "7844e6f4170c48e8a6635f9ab3d2dab8";
 
 function SearchRecipe() {
   const { setIsLoading } = useHomePage();
@@ -36,14 +36,19 @@ function SearchRecipe() {
       includedIngreds = includedIngreds.filter((ing) => ing !== "").join(",");
 
       setIsLoading(true);
-      const res = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${query}&includeIngredients=${includedIngreds}&number=10&apiKey=b5dd3b928c05439bb5a74517645529a4`,
-      );
-      console.log(includedIngreds);
-      const data = await res.json();
-      console.log(data);
-      setSearchResults(data.results);
-      setIsLoading(false);
+      try {
+        const res = await fetch(
+          `https://api.spoonacular.com/recipes/complexSearch?query=${query}&includeIngredients=${includedIngreds}&number=10&apiKey=${apikey2}`,
+        );
+        console.log(includedIngreds);
+        const data = await res.json();
+        console.log(data);
+        setSearchResults(data.results);
+      } catch (err) {
+        console.log(err.message);
+      } finally {
+        setIsLoading(false);
+      }
     }
     fetchRecipes();
   }
